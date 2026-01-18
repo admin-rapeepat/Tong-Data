@@ -116,9 +116,9 @@ const handleAddCar = async (carData: Omit<Motorcycle, 'id'>) => {
               <button 
                 key={type}
                 onClick={() => setFilter(type)}
-                className={`px-8 py-3 rounded-xl font-bold text-lg transition-all border-2 ${
+                className={`px-8 py-3 rounded-xl font-bold text-3xl transition-all border-2 ${
                   filter === type 
-                  ? 'bg-blue-700 text-white border-blue-800 shadow-md scale-105' 
+                  ? 'bg-blue-700 text-white  border-blue-800 shadow-md scale-105' 
                   : 'bg-white text-slate-600 border-slate-200 hover:border-blue-300'
                 }`}
               >
@@ -129,10 +129,10 @@ const handleAddCar = async (carData: Omit<Motorcycle, 'id'>) => {
           
           <button 
             onClick={() => setIsFormOpen(true)}
-            className="w-full md:w-auto bg-green-600 text-white px-8 py-3 rounded-xl font-bold text-xl flex items-center justify-center gap-2 hover:bg-green-700 shadow-lg active:scale-95 transition-all"
+            className="w-full md:w-auto bg-green-600 text-white px-8 py-3 rounded-xl font-bold text-3xl flex items-center justify-center gap-2 hover:bg-green-700 shadow-lg active:scale-95 transition-all"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={5} d="M12 4v16m8-8H4" />
             </svg>
             เพิ่มรถเข้าร้าน
           </button>
