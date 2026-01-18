@@ -10,7 +10,7 @@ interface CarFormProps {
 // ✅ 1. ย้าย InputField ออกมาไว้นอกสุด และแก้ให้รับค่า value, onChange
 const InputField = ({ label, name, value, onChange, type = "text", placeholder = "", className = "" }: any) => (
   <div className={`mb-3 ${className}`}>
-    <label className="block text-base font-bold text-slate-700 mb-1">{label}</label>
+    <label className="block text-2xl font-bold text-slate-700 mb-1">{label}</label>
     <input
       type={type}
       name={name}
@@ -83,14 +83,14 @@ export const CarForm: React.FC<CarFormProps> = ({ car, onClose, onSubmit }) => {
         {/* Header */}
         <div className="bg-green-800 text-white p-3 flex justify-between items-center shadow-md">
           <div className="flex items-center gap-3">
-            <div className="bg-white px-2 py-0.5 rounded text-green-800 font-black text-[12px]">ตงมอเตอร์</div>
-            <h2 className="text-xl font-black">รายละเอียดข้อมูลรถ</h2>
+            <div className="bg-white px-2 py-0.5 rounded text-green-800 font-black text-[20px]">ตงมอเตอร์</div>
+            <h2 className="text-3xl font-black">รายละเอียดข้อมูลรถ</h2>
           </div>
           <button onClick={onClose} className="bg-red-500 text-white w-9 h-9 rounded-full flex items-center justify-center font-bold text-xl hover:bg-red-600 transition-colors shadow-inner">×</button>
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex bg-slate-100 border-b border-slate-200 p-1 gap-1">
+        <div className="flex bg-slate-100 border-b border-slate-200 p-1 gap-1 ">
           {[
             { id: 1, icon: "🏍️", label: "ข้อมูลตัวรถ" },
             { id: 2, icon: "👤", label: "เจ้าของเดิม" },
@@ -100,7 +100,7 @@ export const CarForm: React.FC<CarFormProps> = ({ car, onClose, onSubmit }) => {
               key={tab.id}
               type="button"
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 py-2 px-1 text-base font-bold flex items-center justify-center gap-2 rounded-xl transition-all ${
+              className={`flex-1 py-2 px-1 text-2xl font-bold flex items-center justify-center gap-2 rounded-xl transition-all ${
                 activeTab === tab.id 
                 ? 'bg-white text-green-800 shadow-sm border border-slate-200' 
                 : 'text-slate-500 hover:bg-slate-200'
@@ -120,14 +120,14 @@ export const CarForm: React.FC<CarFormProps> = ({ car, onClose, onSubmit }) => {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
                 <div className="lg:col-span-4">
                   <div className="bg-white p-4 rounded-2xl border-2 border-slate-200 shadow-sm">
-                    <label className="block text-lg font-black text-slate-800 mb-2 text-center">รูปถ่ายรถ</label>
+                    <label className="block text-2xl font-black text-slate-800 mb-2 text-center">รูปถ่ายรถ</label>
                     <div className="aspect-[4/3] w-full bg-slate-100 rounded-xl overflow-hidden mb-3 border-2 border-dashed border-slate-300 relative">
                       {formData.image_url ? (
                         <img src={formData.image_url} alt="รถ" className="w-full h-full object-cover" />
                       ) : (
-                        <div className="w-full h-full flex flex-col items-center justify-center text-slate-400">
+                        <div className="w-full h-full flex flex-col items-center justify-center text-slate-700">
                           <span className="text-4xl mb-1">📸</span>
-                          <span className="text-xs">กดเพื่อเพิ่มรูป</span>
+                          <span className="text-2xl">กดเพื่อเพิ่มรูป</span>
                         </div>
                       )}
                       <input 
@@ -144,7 +144,7 @@ export const CarForm: React.FC<CarFormProps> = ({ car, onClose, onSubmit }) => {
                   <div className="bg-white p-4 rounded-2xl border-2 border-slate-200 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-x-4">
                    <InputField label="วันที่ซื้อเข้าร้าน" name="purchase_date" type="date" value={formData.purchase_date} onChange={handleChange} />
                     <div className="mb-3">
-                      <label className="block text-base font-bold text-slate-700 mb-1">สถานะรถ</label>
+                      <label className="block text-2xl font-bold  text-slate-700 mb-1">สถานะรถ</label>
                       <select 
                         name="status" 
                         value={formData.status} 
@@ -193,7 +193,7 @@ export const CarForm: React.FC<CarFormProps> = ({ car, onClose, onSubmit }) => {
                   <InputField label="สัญชาติ" name="nationality" value={formData.nationality} onChange={handleChange} />
                   <InputField label="วันเกิด" name="birth_date" type="date" value={formData.birth_date} onChange={handleChange} />
                   <div className="col-span-full">
-                    <label className="block text-base font-bold text-slate-700 mb-1">ที่อยู่เดิม</label>
+                    <label className="block text-2xl font-bold text-slate-700 mb-1">ที่อยู่เดิม</label>
                     <textarea 
                       name="original_owner_address" 
                       value={formData.original_owner_address} 
@@ -215,7 +215,7 @@ export const CarForm: React.FC<CarFormProps> = ({ car, onClose, onSubmit }) => {
                   <InputField label="ราคาขาย (บาท)" name="sale_price" type="number" value={formData.sale_price} onChange={handleChange} />
                   <InputField label="ชื่อผู้ซื้อใหม่" name="buyer_name" className="col-span-full" value={formData.buyer_name} onChange={handleChange} />
                   <div className="col-span-full">
-                    <label className="block text-base font-bold text-slate-700 mb-1">ที่อยู่ผู้ซื้อใหม่</label>
+                    <label className="block text-2xl font-bold text-slate-700 mb-1">ที่อยู่ผู้ซื้อใหม่</label>
                     <textarea 
                       name="buyer_address" 
                       value={formData.buyer_address} 
@@ -227,7 +227,7 @@ export const CarForm: React.FC<CarFormProps> = ({ car, onClose, onSubmit }) => {
                 </div>
 
                 <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                  <label className="block text-lg font-black text-slate-800 mb-2 text-center">การโอนทะเบียน</label>
+                  <label className="block text-2xl font-black text-slate-800 mb-2 text-center">การโอนทะเบียน</label>
                   <div className="flex gap-2">
                     <button
                       type="button"
