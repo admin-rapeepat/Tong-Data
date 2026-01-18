@@ -35,15 +35,15 @@ export const CarCard: React.FC<CarCardProps> = ({ car, onEdit, onDelete }) => {
             <p className="text-lg text-green-700 font-bold">ทะเบียน: {car.reg_number} {car.reg_province}</p>
           </div>
           <div className="text-right">
-            <span className="text-sm font-bold bg-green-200 text-green-800 px-2 py-1 rounded">คลิกเพื่อดูรายละเอียดเล่มเขียว</span>
+            <span className="text-sm font-bold bg-green-200 text-green-800 px-2 py-1 rounded">คลิกเพื่อดูเล่มเขียว</span>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-y-3 text-lg text-gray-800">
-          <div><span className="text-gray-500 text-base block uppercase tracking-wide">เลขตัวรถ:</span> <b>{car.chassis_number || '-'}</b></div>
-          <div><span className="text-gray-500 text-base block uppercase tracking-wide">เลขเครื่อง:</span> <b>{car.engine_number || '-'}</b></div>
-          <div><span className="text-gray-500 text-base block uppercase tracking-wide">สีรถ:</span> <b>{car.color || '-'}</b></div>
-          <div><span className="text-gray-500 text-base block uppercase tracking-wide">ราคาขาย:</span> <b className="text-blue-700 text-xl">{car.sale_price ? Number(car.sale_price).toLocaleString() + ' บาท' : 'ยังไม่ระบุ'}</b></div>
+        <div className="grid grid-cols-2 gap-y-3 text-xl text-gray-800">
+          <div><span className="text-black text-base block uppercase tracking-wide">เลขตัวรถ:</span> <b>{car.chassis_number || '-'}</b></div>
+          <div><span className="text-black text-base block uppercase tracking-wide">เลขเครื่อง:</span> <b>{car.engine_number || '-'}</b></div>
+          <div><span className="text-black text-base block uppercase tracking-wide">สีรถ:</span> <b>{car.color || '-'}</b></div>
+          <div><span className="text-black text-base block uppercase tracking-wide">ราคาขาย:</span> <b className="text-blue-700 text-xl">{car.sale_price ? Number(car.sale_price).toLocaleString() + ' บาท' : 'ยังไม่ระบุ'}</b></div>
         </div>
       </div>
 
